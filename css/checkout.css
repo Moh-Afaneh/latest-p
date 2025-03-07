@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Root Variables */
+:root {
+  --background-color: #f4f7f9;
+  --text-color: #333333;
+  --primary-color: #3498db; /* Blue */
+  --accent-color: #e74c3c; /* Red */
+  --border-color: #dcdfe6;
+  --card-bg-color: #ffffff;
+  --input-bg-color: #ffffff;
+  --button-bg-color: #3498db;
+  --button-hover-bg-color: #2980b9;
+  --danger-color: #e74c3c;
+  --danger-hover-color: #c0392b;
+  --success-color: #2ecc71; /* Green */
+}
+
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Checkout Container */
+.checkout-container {
+  background-color: var(--card-bg-color);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Section Headings */
+h3 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Order Summary */
+.order-summary {
+  background: var(--input-bg-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.order-summary p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.order-summary span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.grand-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--danger-color);
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Form Inputs */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg-color);
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  background: #fff;
+  outline: none;
+}
+
+/* Buttons */
+.btn-outline-primary,
+.btn-danger {
+  background: var(--button-bg-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.btn-outline-primary:hover,
+.btn-danger:hover {
+  background: var(--button-hover-bg-color);
+}
+
+/* Coupon Section */
+.coupon-section {
+  background: var(--input-bg-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.coupon-section input {
+  width: 70%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.coupon-section button {
+  width: 28%;
+  padding: 12px;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.coupon-section button:hover {
+  background: var(--button-hover-bg-color);
+}
+
+/* Alert Messages */
+.alert {
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Modal */
+.success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.success-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.success-modal .modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.success-modal .modal-content h4 {
+  color: var(--success-color);
+  font-size: 24px;
+}
+
+.success-modal .modal-content .checkmark {
+  font-size: 50px;
+  color: var(--success-color);
+  margin-bottom: 20px;
+}
+
+.success-modal .modal-content p {
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.success-modal .modal-content .btn-close {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.success-modal .modal-content .btn-close:hover {
+  background: var(--button-hover-bg-color);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .checkout-container {
+    padding: 20px;
+  }
+
+  .coupon-section input,
+  .coupon-section button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .form-input {
+    padding: 10px;
+  }
+}
